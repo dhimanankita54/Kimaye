@@ -1,0 +1,237 @@
+body{
+    background-color: #E0E0E0;
+}
+.container-nav{
+    width: 100%;
+    display: grid;
+    background-color: #E0E0E0;
+    position: fixed;
+    top: 0;
+    height: 40px;
+    grid-template-areas: 
+    "nav1 nav2 img ";
+}
+.nav1{
+    grid-area:nav1;
+    margin: 5px 5px 5px 150px;
+    width: 45px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.nav1:hover{
+    color: rgb(90, 83, 83);
+    font-size: 19px;
+}
+.nav2{
+    grid-area: nav2;
+    margin: 5px 350px 5px 5px;
+    width: 54px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.nav2:hover{
+    color: rgb(90, 83, 83);
+    font-size: 19px;
+}
+.img{
+    grid-area: img;
+    width: 70px;
+    margin: 10px 600px 5px 5px;
+}
+
+.container-header{
+    width: 97.5%;
+    height: 500px;
+    margin: 40px 0px 0px 0px;
+    padding: 20px;
+    background-image: url("https://cdn.shopify.com/s/files/1/0449/5225/6667/files/Diwali-Gift-box-banner_1340x.jpg?v=1634809050%201340w%20732h");
+    background-repeat: no-repeat;
+}
+.container-header>h2{
+    background-color:#C62828;
+    width: 350px;
+    padding: 5px;
+}
+.container-header>button{
+    background-color: #8BC34A;
+}
+#container-recommends{
+    width: 97.5%;
+    padding: 20px;
+    height: auto;
+    background-image: url("https://img.freepik.com/free-photo/cement-texture_1194-5341.jpg?size=626&ext=jpg");
+    display: grid;
+    grid-template-areas: 
+    "t1 t1"
+    "b1 b2"
+    "b3 b4";
+}
+.t1{
+    grid-area: t1;
+    width: 97%;
+    height: auto;
+    text-align: center;
+}
+.b1{
+    width: 350px;
+    height: 350px;
+    margin: 0px 20px 20px 250px;
+    text-align: center;
+    grid-area: b1;
+}
+.b1>img{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+button{
+    padding: 7px;
+    background-color: #C62828;
+    border: none;
+    border-radius: 15px;
+}
+.b2{
+    width: 300px;
+    height: 350px;   
+    margin: 0px 150px 20px 20px;
+    grid-area: b2;
+    text-align: center;
+}
+.b2>img{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+}
+.b3{
+    width: 350px;
+    height: 350px;
+    margin: 0px 20px 10px 250px;
+    grid-area: b3;
+    text-align: center;
+}
+.b3>img{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+}
+.b4{
+    width: 350px;
+    height: 350px;
+    margin: 0px 150px 10px 20px;
+    text-align: center;
+    grid-area: b4;
+}
+.b4>img{
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;  
+}
+#container-saying{
+    width: 97.5%;
+    height: 350px;
+    padding: 19px;
+    background-color: #689F38;
+    display: grid;
+    grid-template-areas: 
+    "s1 s2";
+}
+.s1{
+    width: 250px;
+    height: 350px;
+    margin: 0px 20px 0px 350px;
+    grid-area: s1;
+}
+.s1>img{
+    width:250px;
+    height: 350px;
+}
+.s2{
+    width: 400px;
+    height: 350px;
+    margin: 0px 300px 0px 20px;
+    color: white;
+    grid-area: s2;
+}
+.s2>h4{
+    background-color: white;
+    width: 200px;
+    padding: 10px;
+    color: black;
+}
+#container-secret{
+    background-image: url("https://img.freepik.com/free-photo/cement-texture_1194-5341.jpg?size=626&ext=jpg");
+    width: 97.5%;
+    height: auto;
+    padding: 19px;
+    display: grid;
+    grid-template-areas: 
+    "sec1 sec1" "sec2 sec3";
+}
+.sec1{
+    margin: 10px 150px 0px 370px;
+    width: 500px;
+    height: 100px;
+    grid-area: sec1;
+    text-align: center;
+}
+.sec2{
+    width: 300px;
+    grid-area: sec2;
+    margin: 0px 20px 10px 190px;
+   
+}
+.sec2>img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+.sec3{
+    grid-area: sec3;
+    width: 300px;
+    margin: 0px 20px 10px 20px;
+}
+.sec3>img{
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+#container-footer{
+    background-color: #689F38;
+    width: 97.5%;
+    height: auto;
+    padding: 19px;
+    display: grid;
+    grid-template-areas: 
+    "f1 f2"
+    "cr cr";
+}
+.f1{
+    width: 200px;
+    height: 100px;
+    grid-area: f1;
+    margin: 0px 0px 0px 120px;
+}
+.f1 > h4{
+    margin: 3px;
+}
+.f2{
+    width: 200px;
+    height: 100px;
+    grid-area: f2;
+    margin: 0px 20px 0px 500px;
+}
+.f2>h4{
+    margin: 2px;
+}
+.cr{
+    border-top: 1px solid black;
+    width: 75%;
+    height: 50px;
+    grid-area: cr;
+    margin: 20px 70px 0px 100px;
+}
