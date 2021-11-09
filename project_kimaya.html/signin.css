@@ -1,0 +1,126 @@
+body{
+    background-color: #E0E0E0;
+}
+.container-nav{
+    width: 100%;
+    display: grid;
+    background-color: #E0E0E0;
+    position: fixed;
+    top: 0;
+    height: 40px;
+    grid-template-areas: 
+    "nav1 img nav3";
+}
+.nav1{
+    grid-area:nav1;
+    margin: 5px 280px 5px 250px;
+    width: 45px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.nav1:hover{
+    color: rgb(90, 83, 83);
+    font-size: 19px;
+}
+
+.img{
+    grid-area: img;
+    width: 70px;
+    margin: 10px 250px 5px 0px;
+}
+.nav3{
+    grid-area: nav3;
+    width: 50px;
+    margin: 5px 300px 5px 0px;
+    padding: 1px;
+}
+.container-form{
+    background-image: url('https://img.freepik.com/free-photo/cement-texture_1194-5341.jpg?size=626&ext=jpg');
+    width: 60%;
+    margin: 70px 250px 40px 240px;
+    text-align: center;
+}
+.container-form>h2{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+.container-form>form>input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+}
+.container-form>form>img{
+    font-weight: normal;
+    margin: 0px 5px 5px 200px ;
+    width: 20px;
+    display: inline;
+    vertical-align: middle;
+}
+.container-form>form>h5{
+    font-weight: normal;
+    display: inline;
+    vertical-align: middle;
+}
+button{
+    margin: 10px;
+    width: 340px;
+    background: transparent;
+    border: 1px solid black;
+    padding: 10px;
+}
+button:hover{
+    background-color: black;
+    color: white
+}
+.facebook{
+    background-color: #303F9F;
+    color: white;
+    border: none;
+    height: 40px;
+    text-align: left;
+    padding-top: 12px;
+}
+.facebook img{
+    float: right;
+    width: 20px;
+    padding-bottom: 20px;
+}
+.facebook:hover{
+    background-color: #5C6BC0;
+}
+.google{
+    background-color: #F44336;
+    color: white;
+    border: none;
+    height: 40px;
+    text-align: left;
+    padding-top: 12px;
+}
+.google img{
+    float: right;
+    width: 20px;
+    padding-bottom: 20px;
+}
+.google:hover{
+    background-color: #E57373;
+}
+.account{
+    width: 100%;
+    height: 100px;
+}
+.account>img{
+    width: 40px;
+    padding-top: 10px;
+}
+.account>p{
+    margin: 5px;
+}
+.account>h5{
+    margin: 3px;
+}
