@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Farm Fresh Cut Fruits Online - Kimaye </title>
     <link rel = "stylesheet" href="kimaye-products.css"/>
+    <script type="text/javascript" src="cart.js"></script>
 </head>
 <body>
     <div class="container-nav">
@@ -21,28 +22,8 @@
         <a href="fruit_combos.html">FRUITS COMBOS</a>
         <a href="gifts.html">GIFTS BY KIMAYE</a>
     </div>
-    <div class="container-prod">
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/47dfb7d1-d8d3-4c96-bda9-7dc85dfdec51_360x.png?v=1613364164"/>
-            <h5>Pomengranate seeds (Arils Cup) 125g</h5>
-            <p>Rs 55</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/24d0f9c9-fe83-40a3-84ab-300e73e4ff8d_360x.png?v=1611811511"/>
-            <h5>Coconut Chunks Cup (100g)</h5>
-            <p>Rs 51</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/0fce7fd6-f30e-45df-8c52-234acbd62023_360x.png?v=1611811509"/>
-            <h5>Great Coconut Punnet</h5>
-            <p>Rs 51</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/62cef687-de59-4f5a-acf3-4df1238c3e29-min_360x.png?v=1614324446"/>
-            <h5>Kimaye Arils - Coco Cup (125g)</h5>
-            <p>Rs 55</p>
-        </div>
-    </div>
+    <div id="container-prod"></div>
+
     <div id="container-footer">
         <div class="f1">
             <h4>Contact us</h4>
@@ -59,3 +40,72 @@
     </div>
 </body>
 </html>
+
+<script>
+    var product = [
+        {
+            title:'Pomengranate seeds (Arils Cup) 125g',
+            price:55,
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/47dfb7d1-d8d3-4c96-bda9-7dc85dfdec51_360x.png?v=1613364164',
+        },
+        {
+            title:'Coconut Chunks Cup (100g)',
+            price:51,
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/24d0f9c9-fe83-40a3-84ab-300e73e4ff8d_360x.png?v=1611811511',
+        },
+        {
+            title:'Great Coconut Punnet',
+            price:51,
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/0fce7fd6-f30e-45df-8c52-234acbd62023_360x.png?v=1611811509',
+        },
+        {
+            title:'Kimaye Arils - Coco Cup (125g)',
+            price:55,
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/62cef687-de59-4f5a-acf3-4df1238c3e29-min_360x.png?v=1614324446',
+        }
+    ];
+
+    let parent = document.getElementById("container-prod");
+
+  function showProducts(){
+
+product.forEach(function(products){
+
+let div = document.createElement("div");
+
+let img = document.createElement("img");
+img.src = products.img;
+
+let product_price = document.createElement("p");
+product_price.textContent = products.price;
+
+let product_name = document.createElement("p");
+product_name.textContent = products.title;
+
+let addtocart_btn = document.createElement("button");
+addtocart_btn.innerText = "Add to Cart";
+
+addtocart_btn.onclick = function(){
+    addtocart(products);
+};
+
+div.append(img, product_name, product_price, addtocart_btn);
+parent.append(div);
+
+    });
+  }
+
+showProducts();
+
+if(localStorage.getItem("cart") === null){
+    localStorage.setItem("cart", JSON.stringify([]));
+}
+
+function addtocart(p){
+
+let products_cart = JSON.parse(localStorage.getItem("cart"));
+products_cart.push(p);
+localStorage.setItem("cart", JSON.stringify(products_cart));
+window.location.reload();
+}
+</script>

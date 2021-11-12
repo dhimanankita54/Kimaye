@@ -78,17 +78,23 @@ body{
     grid-area: b1;
 }
 .b1>img{
-    width: 300px;
-    height: 200px;
+    width: 280px;
+    height: 180px;
     border-radius: 20px;
 }
-
+.b1>img:hover{
+    width: 300px;
+    height: 200px;
+}
 button{
     padding: 7px;
     color: white;
     background-color: #C62828;
     border: none;
     border-radius: 15px;
+}
+button:hover{
+    background-color: #c04141;
 }
 .b2{
     width: 300px;
@@ -98,9 +104,13 @@ button{
     text-align: center;
 }
 .b2>img{
+    width: 280px;
+    height: 180px;
+    border-radius: 20px;
+}
+.b2>img:hover{
     width: 300px;
     height: 200px;
-    border-radius: 20px;
 }
 .b3{
     width: 350px;
@@ -110,9 +120,13 @@ button{
     text-align: center;
 }
 .b3>img{
+    width: 280px;
+    height: 180px;
+    border-radius: 20px;
+}
+.b3>img:hover{
     width: 300px;
     height: 200px;
-    border-radius: 20px;
 }
 .b4{
     width: 350px;
@@ -122,9 +136,13 @@ button{
     grid-area: b4;
 }
 .b4>img{
+    width: 280px;
+    height: 180px;
+    border-radius: 20px;  
+}
+.b4>img:hover{
     width: 300px;
     height: 200px;
-    border-radius: 20px;  
 }
 #container-saying{
     width: 97.5%;

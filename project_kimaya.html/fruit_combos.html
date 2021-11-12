@@ -21,23 +21,9 @@
         <a href="fruit_combos.html">FRUITS COMBOS</a>
         <a href="gifts.html">GIFTS BY KIMAYE</a>
     </div>
-    <div class="container-prod">
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/Wholesome-combo_360x.jpg?v=1618497683"/>
-            <h5>Kimaye Wholesome Combo</h5>
-            <p>Rs 931</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/KiwiBlueberry_360x.png?v=1617983685"/>
-            <h5>Kimaye Kiwi - Blueberries Combo</h5>
-            <p>Rs 463</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/grapes-kiwicombo_360x.png?v=1630594918"/>
-            <h5>Kimaye Red Globe Grapes - Golden Kiwi Combo</h5>
-            <p>Rs 404</p>
-        </div>
-    </div>
+
+    <div id="container-prod"></div>
+
     <div id="container-footer">
         <div class="f1">
             <h4>Contact us</h4>
@@ -54,3 +40,66 @@
     </div>
 </body>
 </html>
+
+<script>
+
+  var product = [
+      {
+          img :'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/Wholesome-combo_360x.jpg?v=1618497683',
+          title:'Kimaye Wholesome Combo',
+          price:931,
+      },
+      {
+          img :'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/KiwiBlueberry_360x.png?v=1617983685',
+          title:'Kimaye Kiwi - Blueberries Combo',
+          price:463,
+      },
+      {
+          img :'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/grapes-kiwicombo_360x.png?v=1630594918',
+          title:'Kimaye Red Globe Grapes - Golden Kiwi Combo',
+          price:404,
+      },
+  ]  
+    let parent = document.getElementById("container-prod");
+
+function showProducts(){
+
+product.forEach(function(products){
+
+let div = document.createElement("div");
+
+let img = document.createElement("img");
+img.src = products.img;
+
+let product_price = document.createElement("p");
+product_price.textContent = products.price;
+
+let product_name = document.createElement("p");
+product_name.textContent = products.title;
+
+let addtocart_btn = document.createElement("button");
+addtocart_btn.innerText = "Add to Cart";
+
+addtocart_btn.onclick = function(){
+  addtocart(products);
+};
+
+div.append(img, product_name, product_price, addtocart_btn,);
+parent.append(div);
+  });
+}
+
+showProducts();
+
+if(localStorage.getItem("cart") === null){
+  localStorage.setItem("cart", JSON.stringify([]));
+}
+
+function addtocart(p){
+
+let products_cart = JSON.parse(localStorage.getItem("cart"));
+products_cart.push(p);
+localStorage.setItem("cart", JSON.stringify(products_cart));
+window.location.reload();
+}
+</script>

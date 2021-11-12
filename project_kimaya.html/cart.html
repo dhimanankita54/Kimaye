@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="kimaye-products.css">
 </head>
 <body>
     <div class="container-nav">
@@ -15,5 +16,85 @@
             <a href="cart.html"><img src="https://cdn-icons-png.flaticon.com/128/3609/3609075.png" width="20px"/></a>
         </div>
     </div>
+    <div class="container-links">
+        <a href="fresh_cuts.html">FRESH CUTS</a>
+        <a href="fruit_combos.html">FRUITS COMBOS</a>
+        <a href="gifts.html">GIFTS BY KIMAYE</a>
+    </div>
+
+    <div id="container-prod"></div>
+
+    <div id = "container-total"style="text-align: center;"></div>
+    <div id = "container-purchased"style="text-align: center;"></div>
+
 </body>
 </html>
+<script>
+    let parent = document.getElementById("container-prod");
+
+function showProducts(){
+    let cart = JSON.parse(localStorage.getItem("cart"));
+
+cart.forEach(function(products){
+
+let div = document.createElement("div");
+
+let img = document.createElement("img");
+img.src = products.img;
+
+let product_price = document.createElement("p");
+product_price.textContent = products.price;
+
+let product_name = document.createElement("p");
+product_name.textContent = products.name;
+
+let remove_btn = document.createElement("button");
+remove_btn.innerText = "Remove";
+
+remove_btn.onclick = function(){
+remove(products);
+};
+
+div.append(img, product_name, product_price, remove_btn);
+parent.append(div);
+
+
+});
+}
+showProducts();
+
+function cart_total(products){
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    cart.forEach(function(products){
+
+        var total = cart.reduce(function(acc,cv){
+            return acc+cv.price;
+        },0);
+
+       document.getElementById('container-total').innerHTML = `<h1>Total Price is : ${total}</h1>`    
+        
+    }); 
+}
+cart_total();
+
+document.getElementById('container-purchased').innerHTML = `<button onclick = "purchased()" style = "background-color:green; border : none; border-radius : 20px; color:white; padding: 10px">Proceed to Checkout</button>`
+
+function purchased(){
+    alert("Thank you for Shopping!")
+}
+
+
+function remove(p){
+
+    let products_cart = JSON.parse(localStorage.getItem("cart"));
+    products_cart.shift(p);
+    localStorage.setItem("cart", JSON.stringify(products_cart));
+    window.location.reload();
+    
+}
+
+
+
+
+
+</script>

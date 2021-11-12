@@ -21,33 +21,8 @@
         <a href="fruit_combos.html">FRUITS COMBOS</a>
         <a href="gifts.html">GIFTS BY KIMAYE</a>
     </div>
-    <div class="container-prod">
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/diwali-gift-box-cover-2_360x.jpg?v=1634560171"/>
-            <h5>Fruit Box by Kimaye (Amor)</h5>
-            <p>Rs 3,000</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/3_360x.jpg?v=1634795494"/>
-            <h5>Fruit Box by Kimaye (Abundance)</h5>
-            <p>Rs 2,700</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7790_360x.jpg?v=1631346990"/>
-            <h5>Fruit Box by Kimaye (Strength)</h5>
-            <p>Rs 1,800</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_360x.jpg?v=1631347621"/>
-            <h5>Fruit Box by Kimaye (Adore)</h5>
-            <p>Rs 2,400</p>
-        </div>
-        <div>
-            <img src="https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_360x.jpg?v=1631350656"/>
-            <h5>Fruit Box by Kimaye (Cherish)</h5>
-            <p>Rs 1,300</p>
-        </div>
-    </div>
+    <div id="container-prod"></div>
+
     <div id="container-footer">
         <div class="f1">
             <h4>Contact us</h4>
@@ -64,3 +39,75 @@
     </div>
 </body>
 </html>
+
+<script>
+    var product = [
+        {
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/diwali-gift-box-cover-2_360x.jpg?v=1634560171',
+            title:'Fruit Box by Kimaye (Amor)',
+            price:3000,
+        },
+        {
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/3_360x.jpg?v=1634795494',
+            title:'Fruit Box by Kimaye (Abundance)',
+            price:2700,
+        },
+        {
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7790_360x.jpg?v=1631346990',
+            title:'Fruit Box by Kimaye (Strength)',
+            price:1800,
+        },
+        {
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7807_360x.jpg?v=1631347621',
+            title:'Fruit Box by Kimaye (Adore)',
+            price:2400,
+        }, {
+            img:'https://cdn.shopify.com/s/files/1/0449/5225/6667/products/2I8A7821_360x.jpg?v=1631350656',
+            title:'Fruit Box by Kimaye (Cherish)',
+            price:1300,
+        },
+    ];
+    let parent = document.getElementById("container-prod");
+
+function showProducts(){
+
+product.forEach(function(products){
+
+let div = document.createElement("div");
+
+let img = document.createElement("img");
+img.src = products.img;
+
+let product_price = document.createElement("p");
+product_price.textContent = products.price;
+
+let product_name = document.createElement("name");
+product_name.textContent = products.title;
+
+let addtocart_btn = document.createElement("button");
+addtocart_btn.innerText = "Add to Cart";
+
+addtocart_btn.onclick = function(){
+  addtocart(products);
+};
+
+div.append(img, product_name, product_price, addtocart_btn);
+parent.append(div);
+
+  });
+}
+
+showProducts();
+
+if(localStorage.getItem("cart") === null){
+  localStorage.setItem("cart", JSON.stringify([]));
+}
+
+function addtocart(p){
+
+let products_cart = JSON.parse(localStorage.getItem("cart"));
+products_cart.push(p);
+localStorage.setItem("cart", JSON.stringify(products_cart));
+window.location.reload();
+}
+</script>
